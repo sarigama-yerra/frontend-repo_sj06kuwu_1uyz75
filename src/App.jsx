@@ -1,28 +1,33 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import HowItWorks from './components/HowItWorks';
+import Features from './components/Features';
+import Tournaments from './components/Tournaments';
+import Community from './components/Community';
+import Footer from './components/Footer';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App(){
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="bg-black min-h-screen font-sans">
+      <Navbar />
+      <main>
+        <Hero />
+        <HowItWorks />
+        <Features />
+        <Tournaments />
+        <section id="join" className="relative bg-[#0a0a0b] py-20">
+          <div className="absolute inset-0 bg-[radial-gradient(1000px_500px_at_50%_-10%,rgba(177,50,52,0.2),transparent)]" />
+          <div className="relative max-w-3xl mx-auto px-4 text-center">
+            <h3 className="text-3xl font-bold text-white">Ready to step into the Arena?</h3>
+            <p className="text-white/70 mt-3">Join Early Access to compete in ranked 1vs1 matches, tournaments and seasonal events.</p>
+            <div className="mt-6">
+              <a href="#" className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#B13234] hover:bg-[#c23b3d] text-white font-semibold shadow-[0_0_40px_rgba(177,50,52,0.55)] transition-colors">Join Early Access</a>
+            </div>
+          </div>
+        </section>
+        <Community />
+      </main>
+      <Footer />
     </div>
   )
 }
-
-export default App
